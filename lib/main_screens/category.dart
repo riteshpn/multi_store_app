@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/category/men_category.dart';
 import 'package:multi_store_app/utilities/categ_list.dart';
 import 'package:multi_store_app/widgets/fake_search.dart';
 
@@ -77,7 +78,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           return GestureDetector(
             onTap: () {
               _pageController.animateToPage(index,
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 100,
                   ),
                   curve: Curves.bounceOut);
@@ -121,8 +122,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
           });
         },
         scrollDirection: Axis.vertical,
-        children: [
-          Center(child: Text('men categories')),
+        children: const [
+          MencategoryScreen(),
           Center(child: Text('women categories')),
           Center(child: Text('shoes categories')),
           Center(child: Text('bags categories')),
