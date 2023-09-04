@@ -31,7 +31,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
       body: _tabs[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600,),
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         //unselectedItemColor: Colors.amber,
