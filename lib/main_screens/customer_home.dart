@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/main_screens/category.dart';
 import 'package:multi_store_app/main_screens/home.dart';
 
 class CustomerHomeScreen extends StatefulWidget {
@@ -12,9 +13,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
   int _selectedIndex = 0;
   final List<Widget> _tabs = const [
     HomeScreen(),
-    Center(
-      child: Text('Category screen'),
-    ),
+    CategoryScreen(),
     Center(
       child: Text('stores screen'),
     ),
@@ -31,7 +30,9 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
       body: _tabs[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600,),
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w600,
+        ),
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
         //unselectedItemColor: Colors.amber,

@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: CupertinoSearchTextField(),
+        title: CupertinoSearchTextField(), 
         backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(
