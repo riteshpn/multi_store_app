@@ -8,7 +8,6 @@ import 'package:multi_store_app/category/kids_categ.dart';
 import 'package:multi_store_app/category/men_category.dart';
 import 'package:multi_store_app/category/shoes_categ.dart';
 import 'package:multi_store_app/category/women_categ.dart';
-import 'package:multi_store_app/utilities/categ_list.dart';
 
 import 'package:multi_store_app/widgets/fake_search.dart';
 
@@ -68,7 +67,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        title: FakeScreen(),
+        title: const FakeScreen(),
       ),
       body: Stack(children: [
         Positioned(bottom: 0, left: 0, child: sideNavigation(size)),
