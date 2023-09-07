@@ -204,7 +204,14 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               width: 0.25),
                         ),
                         YelllowButton(
-                            label: 'Sign Up', onPressed: () {}, width: 0.25),
+                            label: 'Sign Up',
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                context,
+                                '/customer_signup',
+                              );
+                            },
+                            width: 0.25),
                         AnimatedLogo(controller: _controller),
                       ],
                     ),
