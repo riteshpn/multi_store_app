@@ -9,7 +9,7 @@ class CustomerRegister extends StatefulWidget {
 }
 
 class _CustomerRegisterState extends State<CustomerRegister> {
-  bool passwordVisibilty = false;
+  bool passwordVisibilty = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
