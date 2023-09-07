@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/dashboard_componets/edit_business.dart';
+import 'package:multi_store_app/dashboard_componets/manage_product.dart';
+import 'package:multi_store_app/dashboard_componets/my_store.dart';
+import 'package:multi_store_app/dashboard_componets/supl_order.dart';
+import 'package:multi_store_app/dashboard_componets/supp_statics.dart';
+import 'package:multi_store_app/dashboard_componets/suppl_balance.dart';
 import 'package:multi_store_app/widgets/appbar_widget.dart';
 
 List<String> label = [
@@ -17,6 +23,15 @@ List<IconData> icons = [
   Icons.settings,
   Icons.attach_money,
   Icons.show_chart
+];
+
+List<Widget> pages = [
+  MyStore(),
+  SupplierOrder(),
+  EditBusiness(),
+  ManageProduct(),
+  BalanceScreen(),
+  StaticsScreen()
 ];
 
 class DashboardScreen extends StatelessWidget {
@@ -46,29 +61,35 @@ class DashboardScreen extends StatelessWidget {
             mainAxisSpacing: 50,
             crossAxisCount: 2,
             children: List.generate(6, (index) {
-              return Card(
-                elevation: 15,
-                shadowColor: Colors.purpleAccent.shade200,
-                color: Colors.blueGrey.withOpacity(0.7),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Icon(
-                      icons[index],
-                      size: 50,
-                      color: Colors.yellowAccent,
-                    ),
-                    Text(
-                      label[index].toUpperCase(),
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
+              return InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => pages[index]));
+                },
+                child: Card(
+                  elevation: 15,
+                  shadowColor: Colors.purpleAccent.shade200,
+                  color: Colors.blueGrey.withOpacity(0.7),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Icon(
+                        icons[index],
+                        size: 50,
                         color: Colors.yellowAccent,
-                        letterSpacing: 1,
-                        fontFamily: 'Acme',
                       ),
-                    ),
-                  ],
+                      Text(
+                        label[index].toUpperCase(),
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.yellowAccent,
+                          letterSpacing: 1,
+                          fontFamily: 'Acme',
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             })),

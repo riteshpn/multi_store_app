@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/main_screens/supplier_home.dart';
 import 'package:multi_store_app/widgets/yellow_button_widget.dart';
 
 const textColors = [
@@ -84,7 +85,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               SizedBox(
                 height: 80,
                 child: DefaultTextStyle(
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Acme',
@@ -152,7 +153,18 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           children: [
                             AnimatedLogo(controller: _controller),
                             YelllowButton(
-                                label: 'Log In', onPressed: () {}, width: 0.25),
+                                label: 'Log In',
+                                onPressed: () {
+                                  // Navigator.pushReplacement(
+                                  // context,
+                                  // MaterialPageRoute(
+                                  // builder: (context) =>
+                                  // SupplierHomeScreen(),
+                                  // ));
+                                  Navigator.pushReplacementNamed(
+                                      context, '/supplier_home');
+                                },
+                                width: 0.25),
                             Padding(
                               padding: const EdgeInsets.only(right: 8),
                               child: YelllowButton(
@@ -184,7 +196,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                         Padding(
                           padding: const EdgeInsets.only(left: 8),
                           child: YelllowButton(
-                              label: 'Log In', onPressed: () {}, width: 0.25),
+                              label: 'Log In',
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/customer_home');
+                              },
+                              width: 0.25),
                         ),
                         YelllowButton(
                             label: 'Sign Up', onPressed: () {}, width: 0.25),
@@ -197,8 +214,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
                 child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white38,
+                  decoration: BoxDecoration(
+                    color: Colors.white38.withOpacity(0.3),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -210,13 +227,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                             image: AssetImage('images/inapp/google.jpg')),
                       ),
                       GoogleFacebookLogIn(
-                        label: 'Google',
+                        label: 'Facebook',
                         onPressed: () {},
                         child: const Image(
                             image: AssetImage('images/inapp/facebook.jpg')),
                       ),
                       GoogleFacebookLogIn(
-                          label: 'Google',
+                          label: 'Guest',
                           onPressed: () {},
                           child: const Icon(
                             Icons.person,
